@@ -8,15 +8,39 @@ namespace WGBL_Bank_Project_Console
     {
         private int amount;
         private Transaction nextTransaction;
+        private DateTime dateTime;
+
+        public Transaction(int amount)
+        {
+            this.amount = amount;
+            this.dateTime = DateTime.Now;
+        }
 
         public void printTransactions()
         {
-            // TODO: Implement printing of transactions
+            printTransactions_h(this);
         }
 
         private void printTransactions_h(Transaction transaction)
         {
-            // TODO: Implement recursive printing of transactions
+            if(transaction != null)
+            {
+                if (amount > 0)
+                {
+                    Console.WriteLine("Deposit of $" + amount + " on " + dateTime.ToShortDateString());
+                }
+                else
+                {
+                    // Withdrawal value will be less than 0, so make it positive
+                    Console.WriteLine("Withdrawal of $" + (amount * -1) + " on " + dateTime.ToShortDateString());
+                }
+                printTransactions_h(transaction.nextTransaction);
+            }
+        }
+
+        public void addTransaction(int amount)
+        {
+            nextTransaction = new Transaction(amount);
         }
     }
 }
