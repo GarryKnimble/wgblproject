@@ -13,5 +13,11 @@ namespace WGBL_Bank_Project_Console
             // Add new account to accounts dictionary
             accounts.Add(username, new Account(username, password, balance));
         }
+
+        public Account getAccount(string username)
+        {
+            // Retrieve account given username
+            return accounts[username];
+        }
     }
 }
