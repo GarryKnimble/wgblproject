@@ -9,12 +9,12 @@ namespace WGBL_Bank_Project_Console
         // method: deposit
         // amount - The amount to deposit into account
         // description: Deposit amount into account
-        int deposit(int amount);
+        bool deposit(int amount);
 
         // method: withdrawal
         // amount - The amount to withdrawal from account
         // description: Withdrawal from account
-        int withdrawal(int amount);
+        bool withdrawal(int amount);
 
         // method: checkBalance
         // description: Returns the balance of the account
