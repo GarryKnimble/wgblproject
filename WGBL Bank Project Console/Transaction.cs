@@ -6,8 +6,8 @@ namespace WGBL_Bank_Project_Console
 {
     class Transaction
     {
-        int amount;
-        Transaction nextTransaction;
+        private int amount;
+        private Transaction nextTransaction;
 
         public void printTransactions()
         {

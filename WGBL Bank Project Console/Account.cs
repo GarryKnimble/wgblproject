@@ -8,27 +8,40 @@ namespace WGBL_Bank_Project_Console
     {
         private string username;
         private string password;
-        private Transaction transaction;
+        private Transaction transactions;
         private int balance;
 
-        public void deposit(int amount)
+        public Account(string username, string password, int balance)
         {
-            // TODO: Implement depositing amount into account
+            this.username = username;
+            this.password = password;
+            this.balance = balance;
         }
 
-        public void withdrawal(int amount)
+        public int deposit(int amount)
         {
-            // TODO: Implement withdrawaling amount from account
+            // Increment to balance
+            balance += amount;
+            return amount;
+        }
+
+        public int withdrawal(int amount)
+        {
+            // Decrement from balance
+            balance -= amount;
+            return -amount;
         }
 
         public int checkBalance()
         {
+            // Return account balance
             return balance;
         }
 
         public void seeTransactionHistory()
         {
-            // TODO: Implement printing of transaction history
+            // Print account transaction history
+            transactions.printTransactions();
         }
     }
 }
