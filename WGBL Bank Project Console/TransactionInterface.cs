@@ -9,5 +9,9 @@ namespace WGBL_Bank_Project_Console
         // method: printTransactions
         // description: Print all the transactions in linkedlist
         void printTransactions();
+
+        // method: addTransaction
+        // description: Add transaction to linkedlist of transactions
+        void addTransaction(int amount);
     }
 }

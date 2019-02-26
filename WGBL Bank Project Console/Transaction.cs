@@ -37,5 +37,10 @@ namespace WGBL_Bank_Project_Console
                 printTransactions_h(transaction.nextTransaction);
             }
         }
+
+        public void addTransaction(int amount)
+        {
+            nextTransaction = new Transaction(amount);
+        }
     }
 }
