@@ -13,5 +13,10 @@ namespace WGBL_Bank_Project_Console
         // description: Create an account with a username, password,
         // and initial balance
         void createAccount(string username, string password, int balance);
+
+        // method: getAccount
+        // username - The username of the account to get
+        // description: Retrieves the account with the given username
+        Account getAccount(string username);
     }
 }

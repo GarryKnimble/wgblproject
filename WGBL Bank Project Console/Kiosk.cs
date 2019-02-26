@@ -12,10 +12,12 @@ namespace WGBL_Bank_Project_Console
         public bool login(string username, string password)
         {
             Account login = bank.getAccount(username);
+            // If user doesn't exist, then error
             if (login == null)
             {
                 return false;
             }
+            // If no user logged in.
             else
             {
                 if (login.isPassword(password))
@@ -24,25 +26,30 @@ namespace WGBL_Bank_Project_Console
                     return true;
                 }
             }
+            // If password is wrong, return false.
             return false;
         }
         public bool createAccount(string username, string password, int balance)
         {
-            if (currentUser != null)
+            // If no user logged in, create account
+            if (currentUser == null)
             {
                 bank.createAccount(username, password, balance);
                 return true;
             }
+            // Otherwise, return false
             return false;
         }
         public bool deposit(int amount)
         {
             if(currentUser != null) return currentUser.deposit(amount);
+            // If user not logged in, return false
             return false;
         }
-        public void withdrawal(int amount)
+        public bool withdrawal(int amount)
         {
             if (currentUser != null) return currentUser.withdrawal(amount);
+            // If user not logged in, return false
             return false;
         }
         public void seeTransactionHistory()
