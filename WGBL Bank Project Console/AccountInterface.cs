@@ -23,5 +23,10 @@ namespace WGBL_Bank_Project_Console
         // method: seeTransactionHistory
         // description: Prints the transaction history of account
         void seeTransactionHistory();
+
+        // method: isPassword
+        // description: Returns if the given password for the account
+        // is correct
+        bool isPassword(string password);
     }
 }
