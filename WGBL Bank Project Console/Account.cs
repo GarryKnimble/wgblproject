@@ -18,18 +18,28 @@ namespace WGBL_Bank_Project_Console
             this.balance = balance;
         }
 
-        public int deposit(int amount)
+        public bool deposit(int amount)
         {
-            // Increment to balance
-            balance += amount;
-            return amount;
+            if (amount > 0)
+            {
+                // Increment to balance
+                balance += amount;
+                addTransaction(amount);
+                return true;
+            }
+            return false;
         }
 
-        public int withdrawal(int amount)
+        public bool withdrawal(int amount)
         {
-            // Decrement from balance
-            balance -= amount;
-            return -amount;
+            if (amount > 0)
+            {
+                // Decrement from balance
+                balance -= amount;
+                addTransaction(-amount);
+                return true;
+            }
+            return false;
         }
 
         public int checkBalance()
@@ -42,6 +52,10 @@ namespace WGBL_Bank_Project_Console
         {
             // Print account transaction history
             transactions.printTransactions();
+        }
+        private void addTransaction(int amount)
+        {
+            transactions.addTransaction(amount);
         }
     }
 }
