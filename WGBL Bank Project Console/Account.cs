@@ -53,9 +53,16 @@ namespace WGBL_Bank_Project_Console
             // Print account transaction history
             transactions.printTransactions();
         }
+
         private void addTransaction(int amount)
         {
             transactions.addTransaction(amount);
+        }
+
+        public bool isPassword(string password)
+        {
+            if (password.Equals(this.password)) return true;
+            return false;
         }
     }
 }
