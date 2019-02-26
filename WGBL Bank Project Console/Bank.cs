@@ -10,7 +10,8 @@ namespace WGBL_Bank_Project_Console
 
         public void createAccount(string username, string password, int balance)
         {
-            // TODO: Implement account creation
+            // Add new account to accounts dictionary
+            accounts.Add(username, new Account(username, password, balance));
         }
     }
 }
