@@ -6,7 +6,7 @@ namespace WGBL_Bank_Project_Console
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // TODO: Implement command line here
         }
     }
 }
