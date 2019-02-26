@@ -9,25 +9,45 @@ namespace WGBL_Bank_Project_Console
         private Bank bank;
         private Account currentUser;
 
-        public void login(string username, string password)
+        public bool login(string username, string password)
         {
-            // TODO: Implement login method
+            Account login = bank.getAccount(username);
+            if (login == null)
+            {
+                return false;
+            }
+            else
+            {
+                if (login.isPassword(password))
+                {
+                    currentUser = login;
+                    return true;
+                }
+            }
+            return false;
         }
-        public void createAccount(string username, string password, int balance)
+        public bool createAccount(string username, string password, int balance)
         {
-            // TODO: Implement account creation
+            if (currentUser != null)
+            {
+                bank.createAccount(username, password, balance);
+                return true;
+            }
+            return false;
         }
-        public void deposit(int amount)
+        public bool deposit(int amount)
         {
-            // TODO: Implement depositing into account
+            if(currentUser != null) return currentUser.deposit(amount);
+            return false;
         }
         public void withdrawal(int amount)
         {
-            // TODO: Implement withdrawaling from account
+            if (currentUser != null) return currentUser.withdrawal(amount);
+            return false;
         }
         public void seeTransactionHistory()
         {
-            // TODO: Implement printing transaction history of account
+            currentUser.seeTransactionHistory();
         }
     }
 }
