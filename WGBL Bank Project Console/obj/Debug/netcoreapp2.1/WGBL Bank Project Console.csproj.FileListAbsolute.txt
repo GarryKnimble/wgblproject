@@ -1,0 +1,11 @@
+C:\Users\Gigabowzer\source\repos\WGBL Bank Project Console\WGBL Bank Project Console\bin\Debug\netcoreapp2.1\WGBL Bank Project Console.deps.json
+C:\Users\Gigabowzer\source\repos\WGBL Bank Project Console\WGBL Bank Project Console\bin\Debug\netcoreapp2.1\WGBL Bank Project Console.runtimeconfig.json
+C:\Users\Gigabowzer\source\repos\WGBL Bank Project Console\WGBL Bank Project Console\bin\Debug\netcoreapp2.1\WGBL Bank Project Console.runtimeconfig.dev.json
+C:\Users\Gigabowzer\source\repos\WGBL Bank Project Console\WGBL Bank Project Console\bin\Debug\netcoreapp2.1\WGBL Bank Project Console.dll
+C:\Users\Gigabowzer\source\repos\WGBL Bank Project Console\WGBL Bank Project Console\bin\Debug\netcoreapp2.1\WGBL Bank Project Console.pdb
+C:\Users\Gigabowzer\source\repos\WGBL Bank Project Console\WGBL Bank Project Console\obj\Debug\netcoreapp2.1\WGBL Bank Project Console.csprojAssemblyReference.cache
+C:\Users\Gigabowzer\source\repos\WGBL Bank Project Console\WGBL Bank Project Console\obj\Debug\netcoreapp2.1\WGBL Bank Project Console.csproj.CoreCompileInputs.cache
+C:\Users\Gigabowzer\source\repos\WGBL Bank Project Console\WGBL Bank Project Console\obj\Debug\netcoreapp2.1\WGBL Bank Project Console.AssemblyInfoInputs.cache
+C:\Users\Gigabowzer\source\repos\WGBL Bank Project Console\WGBL Bank Project Console\obj\Debug\netcoreapp2.1\WGBL Bank Project Console.AssemblyInfo.cs
+C:\Users\Gigabowzer\source\repos\WGBL Bank Project Console\WGBL Bank Project Console\obj\Debug\netcoreapp2.1\WGBL Bank Project Console.dll
+C:\Users\Gigabowzer\source\repos\WGBL Bank Project Console\WGBL Bank Project Console\obj\Debug\netcoreapp2.1\WGBL Bank Project Console.pdb

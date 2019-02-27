@@ -9,6 +9,11 @@ namespace WGBL_Bank_Project_Console
         private Bank bank;
         private Account currentUser;
 
+        public Kiosk()
+        {
+            bank = new Bank();
+        }
+
         public bool login(string username, string password)
         {
             Account login = bank.getAccount(username);
@@ -29,32 +34,63 @@ namespace WGBL_Bank_Project_Console
             // If password is wrong, return false.
             return false;
         }
-        public bool createAccount(string username, string password, int balance)
+
+        public void createAccount(string username, string password, int balance)
         {
             // If no user logged in, create account
             if (currentUser == null)
             {
+                if (username.Length == 0 || password.Length == 0) throw new Exception("You cannot create an account with no username or password.");
                 bank.createAccount(username, password, balance);
-                return true;
             }
-            // Otherwise, return false
-            return false;
+            else
+            {
+                throw new Exception("You cannot create an account while another user is logged into this kiosk.");
+            }
         }
-        public bool deposit(int amount)
+
+        public void deposit(int amount)
         {
-            if(currentUser != null) return currentUser.deposit(amount);
-            // If user not logged in, return false
-            return false;
+            if (currentUser != null)
+            {
+                currentUser.deposit(amount);
+            }
+            else
+            {
+                throw new Exception("You cannot make a deposit when not logged in.");
+            }
         }
-        public bool withdrawal(int amount)
+
+        public void withdrawal(int amount)
         {
-            if (currentUser != null) return currentUser.withdrawal(amount);
-            // If user not logged in, return false
-            return false;
+            if (currentUser != null)
+            {
+                currentUser.withdrawal(amount);
+            }
+            else
+            {
+                throw new Exception("You cannot withdrawal when not logged in.");
+            }
         }
+
         public void seeTransactionHistory()
         {
             currentUser.seeTransactionHistory();
+        }
+
+        public bool isLoggedIn()
+        {
+            return (currentUser != null);
+        }
+
+        public int checkBalance()
+        {
+            return currentUser.checkBalance();
+        }
+
+        public void logout()
+        {
+            currentUser = null;
         }
     }
 }

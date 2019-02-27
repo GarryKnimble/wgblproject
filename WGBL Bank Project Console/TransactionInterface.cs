@@ -6,12 +6,13 @@ namespace WGBL_Bank_Project_Console
 {
     interface TransactionInterface
     {
-        // method: printTransactions
-        // description: Print all the transactions in linkedlist
-        void printTransactions();
+        // method: getAmount
+        // description: Return the transaction amount
+        int getAmount();
 
-        // method: addTransaction
-        // description: Add transaction to linkedlist of transactions
-        void addTransaction(int amount);
+        // method: getDateTime
+        // description: Get the date which the transaction
+        // took place
+        DateTime getDateTime();
     }
 }

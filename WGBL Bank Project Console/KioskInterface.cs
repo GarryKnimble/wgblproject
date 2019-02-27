@@ -21,25 +21,38 @@ namespace WGBL_Bank_Project_Console
         // description: Create an account in the bank. Returns true
         // if there is no account logged in already. Otherwise, it
         // returns false.
-        bool createAccount(string username, string password, int balance);
+        void createAccount(string username, string password, int balance);
 
         //method: deposit
         // amount - Amount to deposit to current account
         // description: Deposit amount to current account.
-        // If the amount is greater than 0, it returns true.
-        // Otherwise, it returns false.
-        bool deposit(int amount);
+        // If the amount is less than 0, an exception
+        // is returned
+        void deposit(int amount);
 
         // method: withdrawal
         // amount - Amount to withdrawal from current account
         // description: Withdrawal amount from current account.
-        // If the amount is greater than 0, it returns true.
-        // Otherwise, it returns false.
-        bool withdrawal(int amount);
+        // If the amount is less than 0, an exception
+        // is returned
+        void withdrawal(int amount);
+
+        // method: checkBalance
+        // description: Return the balance of the current user
+        int checkBalance();
 
         // method: seeTransactionHistory
         // description: Print out the transaction history of
         // current account
         void seeTransactionHistory();
+
+        // method: isLoggedIn
+        // description: Return true if user logged in. Otherwise,
+        // return false
+        bool isLoggedIn();
+
+        // method: logout
+        // description: Log out of the current account.
+        void logout();
     }
 }
