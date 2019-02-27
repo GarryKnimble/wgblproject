@@ -18,9 +18,8 @@ namespace WGBL_Bank_Project_Console
         // username - Username to create account with
         // password - Password to create account with
         // balance - Initial balance to create account with
-        // description: Create an account in the bank. Returns true
-        // if there is no account logged in already. Otherwise, it
-        // returns false.
+        // description: Create an account in the bank. An
+        // exception is returned if there is an account logged in
         void createAccount(string username, string password, int balance);
 
         //method: deposit
