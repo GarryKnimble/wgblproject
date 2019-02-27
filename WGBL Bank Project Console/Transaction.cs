@@ -7,7 +7,7 @@ namespace WGBL_Bank_Project_Console
     class Transaction
     {
         private int amount;
-        private Transaction nextTransaction;
+        public Transaction nextTransaction;
         private DateTime dateTime;
 
         public Transaction(int amount)
@@ -16,31 +16,14 @@ namespace WGBL_Bank_Project_Console
             this.dateTime = DateTime.Now;
         }
 
-        public void printTransactions()
+        public int getAmount()
         {
-            printTransactions_h(this);
+            return amount;
         }
 
-        private void printTransactions_h(Transaction transaction)
+        public DateTime getDateTime()
         {
-            if(transaction != null)
-            {
-                if (amount > 0)
-                {
-                    Console.WriteLine("Deposit of $" + amount + " on " + dateTime.ToShortDateString());
-                }
-                else
-                {
-                    // Withdrawal value will be less than 0, so make it positive
-                    Console.WriteLine("Withdrawal of $" + (amount * -1) + " on " + dateTime.ToShortDateString());
-                }
-                printTransactions_h(transaction.nextTransaction);
-            }
-        }
-
-        public void addTransaction(int amount)
-        {
-            nextTransaction = new Transaction(amount);
+            return dateTime;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace WGBL_Bank_Project_Console
     {
         private string username;
         private string password;
-        private Transaction transactions;
+        private Transactions transactions;
         private int balance;
 
         public Account(string username, string password, int balance)
@@ -16,30 +16,36 @@ namespace WGBL_Bank_Project_Console
             this.username = username;
             this.password = password;
             this.balance = balance;
+            this.transactions = new Transactions();
         }
 
-        public bool deposit(int amount)
+        public void deposit(int amount)
         {
             if (amount > 0)
             {
                 // Increment to balance
                 balance += amount;
                 addTransaction(amount);
-                return true;
             }
-            return false;
+            else
+            {
+                throw new Exception("You cannot deposit a negative amount.");
+            }
         }
 
-        public bool withdrawal(int amount)
+        public void withdrawal(int amount)
         {
+            if (balance - amount < 0) throw new Exception("You cannot withdrawal more than your account has.");
             if (amount > 0)
             {
                 // Decrement from balance
                 balance -= amount;
                 addTransaction(-amount);
-                return true;
             }
-            return false;
+            else
+            {
+                throw new Exception("You cannot withdrawal a negative amount.");
+            }
         }
 
         public int checkBalance()
@@ -50,7 +56,6 @@ namespace WGBL_Bank_Project_Console
 
         public void seeTransactionHistory()
         {
-            // Print account transaction history
             transactions.printTransactions();
         }
 
